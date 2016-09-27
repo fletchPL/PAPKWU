@@ -29,7 +29,7 @@ public class Plik implements Runnable {
 						break;
 					}
 				}
-				System.out.println("Total number of line in this file is : " + lineCounter.getLineNumber());
+				System.out.println("Total number of line in " + fileName + " is : " + lineCounter.getLineNumber());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
