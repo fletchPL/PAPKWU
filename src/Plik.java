@@ -6,15 +6,8 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 
 public class Plik implements Runnable {
-	
-	private String path;
-	private String fileName;
-	public Plik(String path)
-	{
-		this.path = path;
-		this.fileName = fileName;
-	}
-	public void getFileFromPath()
+
+	public void getFileFromPath(String path)
 	{
 		File folder = new File(path);
 		File[] listOfFile = folder.listFiles();
@@ -23,8 +16,8 @@ public class Plik implements Runnable {
 			System.out.println(listOfFile[i]);
 		}
 	}
-	@Override
-	public void run() {
+	public void countLineInEachFile(String path, String fileName)
+	{
 		try {
 			LineNumberReader lineCounter = new LineNumberReader(new InputStreamReader(new FileInputStream(path +"//" + fileName)));
 			
@@ -45,6 +38,11 @@ public class Plik implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Override
+	public void run() {
+		
 		
 	}
 

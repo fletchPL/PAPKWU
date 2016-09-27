@@ -8,14 +8,22 @@ public class MainClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		
+		
+		Plik pl = new Plik();
+		pl.getFileFromPath(path);
+		
 		System.out.println("Type what file u wanna read separate ' ' ");
 		Scanner scan = new Scanner(System.in);
 		userInput = scan.nextLine(); // fileName from user 
 		fileName = userInput.split(" ");
 		
-		Plik pl = new Plik(path);
-		pl.getFileFromPath();
-		pl.run();
+		for(int i= 0; i<fileName.length;i++)
+		{
+			pl.countLineInEachFile(path,fileName[i]);
+		}
+		
+	
 		
 	}
 
